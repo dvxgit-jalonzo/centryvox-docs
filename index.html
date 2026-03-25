@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy – Centryvox</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --surface: #141720;
+      --surface2: #1b1f2e;
+      --border: rgba(255,255,255,0.07);
+      --accent: #4f7cff;
+      --accent2: #a78bfa;
+      --text: #e8eaf0;
+      --muted: #7a7f96;
+      --tag-bg: rgba(79,124,255,0.12);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ─── Ambient background ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 15% 10%, rgba(79,124,255,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 85% 80%, rgba(167,139,250,0.06) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+    }
+
+    /* ─── Header ─── */
+    header {
+      margin-bottom: 56px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-icon svg { width: 22px; height: 22px; }
+
+    .logo-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.01em;
+      color: var(--text);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--tag-bg);
+      border: 1px solid rgba(79,124,255,0.25);
+      border-radius: 99px;
+      padding: 4px 14px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: #7da4ff;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero-badge span {
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    h1 em {
+      font-style: italic;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .meta {
+      font-size: 0.875rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .meta::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 1px;
+      background: var(--muted);
+    }
+
+    /* ─── Divider ─── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 40px 0;
+    }
+
+    /* ─── Sections ─── */
+    .section {
+      margin-bottom: 40px;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .section:nth-child(1) { animation-delay: 0.05s; }
+    .section:nth-child(2) { animation-delay: 0.1s; }
+    .section:nth-child(3) { animation-delay: 0.15s; }
+    .section:nth-child(4) { animation-delay: 0.2s; }
+    .section:nth-child(5) { animation-delay: 0.25s; }
+    .section:nth-child(6) { animation-delay: 0.3s; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .section-num {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      min-width: 28px;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: #fff;
+    }
+
+    p {
+      color: #b0b4c8;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    /* ─── Permission cards ─── */
+    .perm-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .perm-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .perm-card:hover {
+      border-color: rgba(79,124,255,0.35);
+      transform: translateY(-2px);
+    }
+
+    .perm-icon {
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      background: var(--tag-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .perm-title {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .perm-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ─── Data list ─── */
+    .data-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .data-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: #b0b4c8;
+    }
+
+    .data-list li::before {
+      content: '';
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    /* ─── Storage grid ─── */
+    .storage-grid {
+      display: grid;
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .storage-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 16px;
+    }
+
+    .storage-item.purple { border-left-color: var(--accent2); }
+    .storage-item.green  { border-left-color: #34d399; }
+    .storage-item.orange { border-left-color: #fb923c; }
+
+    .storage-label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+
+    .storage-item.purple .storage-label { color: var(--accent2); }
+    .storage-item.green  .storage-label { color: #34d399; }
+    .storage-item.orange .storage-label { color: #fb923c; }
+
+    .storage-text {
+      font-size: 0.875rem;
+      color: #b0b4c8;
+    }
+
+    /* ─── Contact card ─── */
+    .contact-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: #b0b4c8;
+    }
+
+    .contact-row svg {
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+
+    .contact-row a {
+      color: #7da4ff;
+      text-decoration: none;
+    }
+    .contact-row a:hover { text-decoration: underline; }
+
+    /* ─── Footer ─── */
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .footer-dot {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--muted);
+      display: inline-block;
+      margin: 0 6px;
+      vertical-align: middle;
+    }
+
+    /* ─── Animation ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <header>
+    <div class="logo-row">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 15.92z"/>
+        </svg>
+      </div>
+      <span class="logo-name">Centryvox</span>
+    </div>
+    <div class="hero-badge"><span></span> Legal Document</div>
+    <h1>Privacy <em>Policy</em></h1>
+    <p class="meta">Last Updated: March 25, 2026</p>
+  </header>
+
+  <div class="divider"></div>
+
+  <!-- 1. Introduction -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2>Introduction</h2>
+    </div>
+    <p>This Privacy Policy describes how <strong>Diavox Network Inc.</strong> ("we," "us," or "our") processes information in connection with the Centryvox mobile application (the "App"). The App is a private VoIP and hospitality management tool designed exclusively for authorized clients of Diavox Network Inc.</p>
+  </div>
+
+  <!-- 2. Scope -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2>Scope of Service</h2>
+    </div>
+    <p>The App is intended for professional use by private clients. While it is distributed via the Google Play Store for efficiency, full access requires a proprietary QR code provided only to legitimate Diavox Network Inc. clients.</p>
+  </div>
+
+  <!-- 3. Information -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2>Information Processing and Use</h2>
+    </div>
+    <p>To provide its core VoIP and hospitality features, the App requires access to the following device capabilities:</p>
+
+    <div class="perm-grid">
+      <div class="perm-card">
+        <div class="perm-icon">🎙️</div>
+        <div class="perm-title">Microphone</div>
+        <div class="perm-desc">Used to enable Voice over IP (VoIP) calling functionality.</div>
+      </div>
+      <div class="perm-card">
+        <div class="perm-icon">📷</div>
+        <div class="perm-title">Camera</div>
+        <div class="perm-desc">Used exclusively to scan the activation QR code for authentication.</div>
+      </div>
+      <div class="perm-card">
+        <div class="perm-icon">📋</div>
+        <div class="perm-title">Phone / Contacts</div>
+        <div class="perm-desc">Accessed only to allow users to dial contacts within the VoIP feature. Data is never stored or shared.</div>
+      </div>
+      <div class="perm-card">
+        <div class="perm-icon">🔔</div>
+        <div class="perm-title">Notifications</div>
+        <div class="perm-desc">Used for incoming calls and real-time alerts (Fire Alarm, Wakeup Call, Room Status).</div>
+      </div>
+    </div>
+
+    <p>The App may also process limited technical information for operation, including:</p>
+    <ul class="data-list">
+      <li>Authentication data (e.g., QR-based access credentials)</li>
+      <li>Call metadata (e.g., timestamps, duration)</li>
+      <li>Device and system information for diagnostics and performance monitoring</li>
+    </ul>
+  </div>
+
+  <!-- 4. Data Processing -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>Data Processing and Storage</h2>
+    </div>
+    <div class="storage-grid">
+      <div class="storage-item">
+        <div class="storage-label">Local Processing</div>
+        <div class="storage-text">QR code scanning and temporary session handling are processed locally on the device.</div>
+      </div>
+      <div class="storage-item purple">
+        <div class="storage-label">Real-Time Processing</div>
+        <div class="storage-text">Voice communication and signaling data are processed in real time to enable VoIP functionality.</div>
+      </div>
+      <div class="storage-item green">
+        <div class="storage-label">No Persistent Storage</div>
+        <div class="storage-text">The App does not store personal user data, call recordings, or contact information on external servers.</div>
+      </div>
+      <div class="storage-item orange">
+        <div class="storage-label">Secure Transmission</div>
+        <div class="storage-text">Communication data is transmitted over secure channels to private infrastructure managed by or for Diavox Network Inc. clients strictly for service delivery.</div>
+      </div>
+    </div>
+    <p style="margin-top:12px;">We do <strong>not</strong> sell, rent, or trade any user data to third parties.</p>
+  </div>
+
+  <!-- 5. Security -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2>Security</h2>
+    </div>
+    <p>We implement industry-standard security measures to protect communication data handled by the App. As this App is intended for enterprise use, users are also expected to follow their organization's internal security policies.</p>
+  </div>
+
+  <!-- 6. Third-Party -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2>Third-Party Services</h2>
+    </div>
+    <p>The App does not include third-party advertising or tracking SDKs. It may use <strong>Google Play Services</strong> for essential functionality such as push notifications, crash reporting, and basic analytics. These services may collect anonymized technical data in accordance with Google's Privacy Policy.</p>
+  </div>
+
+  <!-- 7. Changes -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <h2>Changes to This Policy</h2>
+    </div>
+    <p>We may update this Privacy Policy from time to time. Any changes will be posted within the App or on the appropriate distribution platform.</p>
+  </div>
+
+  <!-- 8. Children -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">08</span>
+      <h2>Children's Privacy</h2>
+    </div>
+    <p>The App is not intended for use by individuals under the age of 13, and we do not knowingly process data from children.</p>
+  </div>
+
+  <!-- 9. Contact -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">09</span>
+      <h2>Contact Us</h2>
+    </div>
+    <p>If you have any questions or concerns about this Privacy Policy, you may contact us at:</p>
+    <div class="contact-card">
+      <div class="contact-row">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        <strong>Diavox Network Inc.</strong>
+      </div>
+      <div class="contact-row">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <a href="mailto:support@diavox.net">support@diavox.net</a>
+      </div>
+      <div class="contact-row">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>#407 – Lafuerza Plaza 1, Bangkal, Chino Roces Ave., Makati City, Metro Manila</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Diavox Network Inc. <span class="footer-dot"></span> All rights reserved.</p>
+    <p>Centryvox Privacy Policy</p>
+  </footer>
+
+</div>
+</body>
+</html>
